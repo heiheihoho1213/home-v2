@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const repoName = 'home';
+const repoName = 'home-v2';
 
 const nextConfig = {
   reactStrictMode: true,

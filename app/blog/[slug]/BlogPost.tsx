@@ -167,8 +167,8 @@ export default function BlogPost({ post }: BlogPostClientProps) {
                 // 处理 basePath：如果是本地路径（以 / 开头且不是外部 URL），添加 basePath
                 let imageSrc = src;
                 if (src && src.startsWith('/') && !src.startsWith('//')) {
-                  // 从 next.config.mjs 读取 basePath，默认是 '/home'
-                  const basePath = '/home';
+                  // 从 next.config.mjs 读取 basePath，默认是 '/home-v2'
+                  const basePath = '/home-v2';
                   imageSrc = `${basePath}${src}`;
                 }
                 return (
