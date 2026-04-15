@@ -1,5 +1,6 @@
 'use client';
 
+
 import Script from 'next/script';
 
 const girlAvatar = `data:image/svg+xml;utf8,${encodeURIComponent(`
