@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { LanguageProvider } from '../contexts/LanguageContext';
+import { DifyChatbot } from '../components/DifyChatbot';
 import { Layout } from '../components/Layout';
 import '../styles/globals.css';
 
@@ -37,6 +38,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <DifyChatbot />
         <LanguageProvider>
           <Layout>
             {children}
