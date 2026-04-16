@@ -6,6 +6,7 @@ import { PixelCat } from './PixelCat';
 import { Loader } from './Loader';
 import { useLanguage } from '../contexts/LanguageContext';
 import { TRANSLATIONS } from '../data/translations';
+import { publicBasePath } from '../lib/publicBasePath';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -67,7 +68,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                   <div className="absolute bottom-full right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">
                     <div className="w-48 bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-2">
                       <img
-                        src="/home-v2/img/wechat/me-qrcode.jpg"
+                        src={`${publicBasePath}/img/wechat/me-qrcode.jpg`}
                         alt="WeChat QR Code"
                         className="w-48 h-48 object-contain"
                       />

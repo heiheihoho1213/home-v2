@@ -30,7 +30,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # 区分两种部署（静态导出只能二选一，由构建时环境变量决定）：
+      # - 自定义域名根路径：不要在仓库 Variables 里设置 PAGES_BASE_PATH
+      # - github.io/<仓库名>/：在 Settings → Secrets and variables → Actions → Variables
+      #   新增 PAGES_BASE_PATH = 仓库名（如 home-v2），不要加斜杠
       - name: Export static site
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ vars.PAGES_BASE_PATH }}
         run: pnpm export
 
       - name: Disable Jekyll
